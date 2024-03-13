@@ -1,0 +1,18 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build and push image
+        env:
+          MY_ENV_VAR: ${{ secrets.API_SECRET }}
+        run: |
+          docker build -t my-image --build-arg MY_BUILD_ARG=$MY_ENV_VAR .
+          # ... rest of your image push logic

@@ -1,0 +1,5 @@
+FROM ubuntu:latest
+
+ARG MY_BUILD_ARG 
+ENV MY_ENV_VAR=$MY_BUILD_ARG
+RUN echo ${MY_ENV_VAR}
