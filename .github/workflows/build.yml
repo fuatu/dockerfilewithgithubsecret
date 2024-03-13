@@ -14,4 +14,4 @@ jobs:
         env:
           MY_ENV_VAR: ${{ secrets.API_SECRET }}
         run: |
-          docker build .
+          docker build --build-arg MY_BUILD_ARG=$MY_ENV_VAR .
