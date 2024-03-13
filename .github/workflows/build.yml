@@ -15,5 +15,3 @@ jobs:
           MY_ENV_VAR: ${{ secrets.API_SECRET }}
         run: |
           docker build -t my-image --build-arg MY_BUILD_ARG="${{ env.MY_ENV_VAR }}" .
-          echo "${{ env.MY_ENV_VAR }}" > test.txt
-          cat test.txt
